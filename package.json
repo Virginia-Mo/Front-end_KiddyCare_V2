@@ -6,21 +6,38 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "animate.css": "^4.1.1",
+    "axios": "^1.2.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "porp-types": "^0.0.1-security",
+    "prettier": "^2.8.3",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-medium-image-zoom": "^5.1.2",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
+    "sass": "^1.57.1",
+    "swiper": "^8.4.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:react/jsx-runtime"
     ]
   },
   "browserslist": {
@@ -34,5 +51,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0"
   }
 }

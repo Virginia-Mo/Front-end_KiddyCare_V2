@@ -1,0 +1,41 @@
+@use 'src/styles/vars' as v;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    box-shadow: 0.1rem 0.1rem 0.5rem rgb(36, 35, 35);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #f8f9fabf;
+    &__logo {
+        display: flex;
+        align-items: center;
+        margin-left: 2rem;
+    img {
+        width: 10rem;
+        height: 10rem;
+        }
+    p {
+        color: v.$color-blue;
+        font-weight: 700;
+        padding-left: 1rem;
+        font-size: 5rem;
+        font-family: v.$font-paragraph;
+        }
+    }
+    &__account {
+        color: v.$color-bluebtn;
+        margin-top: 2rem;
+        margin-right: 3rem;
+        &__icon {
+            width: 5.5rem;
+            height: 5.5rem;
+        }
+        &__login {
+            color: v.$color-darkblue;
+        }
+
+    }
+}

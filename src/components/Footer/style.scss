@@ -1,0 +1,79 @@
+@use 'src/styles/vars' as v;
+
+.footer {
+    line-height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: v.$color-darkblue;
+    color: v.$color-white;
+    padding: 3rem 2rem;
+    &__maindiv {
+        display: flex;
+    }
+    &__container-box {
+        text-align: left;
+        flex: 1;
+        width: 50%;
+        &__logo {
+            display: flex;
+            flex-direction: column;
+            &__image {
+            width: 7rem;
+            height: 7rem; 
+            }
+            &__title {
+                font-size: 3rem;
+                color: v.$color-blue;
+            }
+        }
+    }
+    &__school__description {
+        text-align: justify;
+        padding: 2rem;
+        &--links {
+        & ul {
+            display: flex;
+            gap: 2rem;
+           & li {
+            font-size: 3rem;
+           }
+        }
+    }
+    }
+    &__title {
+        font-family: v.$font-title;
+        color:v.$color-blue;
+        font-size: 2.5rem;
+        font-weight: 700;
+        padding: 4rem 0 2rem;
+    }
+    &__contact {
+        &-img {
+        color: v.$color-blue;
+        font-size: 2.8rem;
+    }
+        &--details {
+            color: v.$color-white;
+            font-weight: 700;
+            font-family: v.$font-title;
+            font-size: 2rem;
+        }
+        &-content {
+        text-align: center;
+        & ul li {
+        display: flex;
+        gap: 1.5rem;
+        & p {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+    }}
+}
+}
+.copyrights {
+    margin-top: 5rem;
+    border-top: .05rem solid v.$color-blue;
+    padding: 5rem 0;
+    text-align: center;
+}

@@ -1,0 +1,66 @@
+@use 'src/styles/vars' as v;
+
+.classes {
+    text-align: center;
+    line-height: 2.5rem;
+    margin-top: 4rem;
+}
+.classes__container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 4rem;
+    padding: 1% 15%;
+}
+.classescontent {
+    background-color: v.$color-gray;
+    color: v.$color-graytext;
+    box-shadow: 0 0 .5rem v.$color-grayborder;
+    margin-bottom: 4.5rem;
+    padding-bottom: 3rem;
+    width: 30%;
+    &__image {
+        border-radius: 0.5rem;
+        max-width: 100%;
+        width: 100%;
+    }
+    &__name {
+        font-family:v.$font-title;
+        color: v.$color-darkblue;
+        padding-top: 2rem;
+        font-size: 2.2rem;
+        font-weight: 700;
+    }
+    &__description {
+        padding: 2rem;
+        border-bottom: .1rem solid v.$color-darkgray; 
+    }
+    &__table {
+        margin: 2rem auto;
+        width: 90%;
+        border-collapse: collapse;
+        border-style: hidden;
+        border-spacing: 0;
+    }
+}
+.table__td, .table__th {
+    padding: .5rem 2rem;
+    border: .1rem solid v.$color-grayborder;
+}
+.table__th {
+    font-weight: 700;
+    text-align: end;
+}
+.joinclass__btn {
+    color: v.$color-white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    background-color: v.$color-blue;
+    border-radius: 50rem;
+    width: 12rem;
+    height: 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}

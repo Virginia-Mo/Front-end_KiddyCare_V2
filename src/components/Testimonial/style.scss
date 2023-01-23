@@ -1,0 +1,37 @@
+@use 'src/styles/vars' as v;
+
+.parents {
+    width: 70%;
+    margin: 0 auto;
+    &__speech {
+    background-color: v.$color-gray;
+    box-shadow: 0 .1rem .4rem v.$color-grayborder;
+    padding: 2rem;
+    line-height: 2.5rem;
+    border-radius: .5rem;
+    color: v.$color-graytext;
+}
+    &__infos {
+    display: flex;
+    padding: 2rem 0;
+        &-image {
+            border-radius: 50%;
+            width: 7rem;
+            margin-right: 2rem;
+    }   
+        &-name {
+            display: flex;
+            flex-direction: column;
+        }
+}
+    &-name {
+        font-family: v.$font-title;
+        color: v.$color-darkblue;
+        font-size: 2rem;
+        font-weight: 700;
+        padding: 1rem 0;
+    }
+}
+.mySwiper {
+    width: 60%;
+}

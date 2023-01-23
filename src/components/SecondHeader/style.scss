@@ -1,0 +1,18 @@
+@use 'src/styles/vars' as v;
+
+.banner--2 {
+    background-image: url("../../assets/imgs/banner4.jpg");
+}
+.banner {
+    &__description2 {
+        width: auto;
+        font-size: 2.5rem;
+    }
+    &__part2 {
+    align-items: center;
+    gap: 2rem;
+    }
+    &__title--2 {
+        font-size: 8rem;
+    }
+}

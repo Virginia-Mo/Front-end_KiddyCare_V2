@@ -1,0 +1,53 @@
+@use 'src/styles/vars' as v;
+
+.school-description {
+    display: flex;
+    background-color: #5dd2e526;
+    width: 100%;
+}
+.content {
+    &__subtitle {
+    text-transform: uppercase;
+    color: v.$color-blue;
+    font-size: 2.5rem;
+    &:after {
+        content: "";
+        width: 5rem;
+        margin-left: 1rem;
+        border: .1rem solid v.$color-blue;
+        vertical-align: middle;
+        display: inline-block; 
+    }
+}   
+    &__title {
+        color: v.$color-darkblue;
+        font-family:v.$font-title;
+        font-size: 4rem;
+        font-weight: 700;
+        margin: 2rem 0;
+    }
+}
+.aboutus {
+    margin: 3rem 7rem;
+    text-align: left;
+
+    &__content {
+        color: v.$color-graytext;
+        line-height: 2.5rem;
+        font-size: 2rem;
+        width: 80%;
+    }
+    &__linkinfos {
+        color: v.$color-white;
+        text-decoration: none;
+        font-size: 1.8rem;
+        background-color: v.$color-blue;
+        border-radius: 50rem;
+        width: 12rem;
+        height: 4.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        margin-top: 5rem;
+    }
+}

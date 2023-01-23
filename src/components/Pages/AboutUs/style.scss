@@ -1,0 +1,35 @@
+@use 'src/styles/vars' as v;
+
+.schooldescription__image {
+    border-radius: .5rem;
+}
+.aboutus {
+    &__checkpoint {
+        display: flex;
+        padding: 2.5rem 0;
+        margin: 2rem auto;
+        width: 50%;
+        font-size: 2rem;
+    }
+    &__goals {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    margin-left: 3rem;
+    width: 100%;
+    border-bottom: .05rem solid v.$color-grayborder;
+    &-span {
+        color: v.$color-graytext;
+        border-top: .05rem solid v.$color-grayborder;
+        padding: 1rem 0;
+        text-align: left;
+        display: flex;
+    }
+}}
+.check {
+    width: 1.5rem;
+    margin-right: 3rem;
+    color: v.$color-blue;
+    width: 3rem;
+    height: 3rem;
+}

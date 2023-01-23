@@ -1,0 +1,21 @@
+@use 'sass:color';
+
+$color-blue:#17a2b8;
+$color-darkblue:#00394f;
+$color-bluebtn:#138496;
+$color-darkbluebtn:#001d29;
+$color-gray:#f8f9fa;
+$color-darkgray:#d9dadb;
+$color-graytext:#706f6f;
+$color-grayborder:#dee2e6;
+$color-white:#fff;
+
+// Police titre
+$font-title: 'Handlee',cursive;
+// Taille titre
+$font-size-t: 4.6rem;
+
+// Police paragraphe
+$font-paragraph:'Nunito',sans-serif; 
+// Taille de la police du paragraphe
+$font-size-p: 2.2rem;

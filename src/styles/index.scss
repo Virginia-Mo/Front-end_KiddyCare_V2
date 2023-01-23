@@ -1,0 +1,15 @@
+@use 'reset';
+@use 'vars' as v;
+
+:root {
+    --swiper-navigation-color: #17a2b8;
+    --swiper-pagination-color: #17a2b8;
+  }
+html {
+    font-size: 10px;
+}
+body {
+    font-size: 16px;
+    font-family: v.$font-paragraph;
+    height: 100vh;
+}
