@@ -1,0 +1,12 @@
+@use 'src/styles/vars' as v;
+
+.navContainer {
+    background-color: beige;
+    margin: 2rem;
+    gap: 2rem;
+    color: blue;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+}

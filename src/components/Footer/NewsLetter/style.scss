@@ -1,6 +1,9 @@
 @use 'src/styles/vars' as v;
+
 .newsletterform {
     width: 95%;
+    display: flex;
+    flex-direction: column;
 }
 .bookingform__input {
     width: 100%;
@@ -21,11 +24,12 @@
     font-size: 1.8rem;
     background-color: v.$color-blue;
     border-radius: 50rem;
-    width: 100%;
+    width: 80%;
     height: 5.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
     cursor: pointer;
+    margin: 2rem 0;
 }

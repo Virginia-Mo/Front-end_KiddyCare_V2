@@ -2,24 +2,24 @@
 import './style.scss';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getClasses } from '../../actions/classes';
-
+// components
 import Header from '../MainHeader';
 import Cards from '../Cards';
 import AboutUs from '../AboutUs';
 import Class from "../Class"
 import Testimonial from '../Testimonial';
+// actions
+import { getClasses } from '../../actions/classes';
 
 function WelcomePage() {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getClasses());
   }, [dispatch]);
 
-const classes = useSelector((state) => state.classes.classes);
-
-const selectedClasses = classes.slice(3)
-console.log(classes);
+  const classes = useSelector((state) => state.classes.classes);
+  const selectedClasses = classes.slice(3)
 
   return (
     <>
@@ -55,7 +55,6 @@ console.log(classes);
       <Testimonial />
       </main>
     </>
-
   );
 }
 

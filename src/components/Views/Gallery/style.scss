@@ -1,0 +1,30 @@
+@use 'src/styles/vars' as v;
+
+.gallery-img {
+    max-width: 100%;
+    box-shadow: 0.1rem 0.1rem 0.5rem rgba(128, 128, 128, 0.658);
+    border-radius: 0.5rem;
+}
+.joinclass__btn--gallery {
+    background-color: v.$color-white;
+    color: v.$color-blue;
+    border: .1rem solid v.$color-blue;
+}
+#galleryphotos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin: 2rem 4rem 20rem;
+}
+.gallery__buttonsbox {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 50%;
+}
+.gallerylist {
+    margin-top: 5rem;
+    text-align: center;
+}

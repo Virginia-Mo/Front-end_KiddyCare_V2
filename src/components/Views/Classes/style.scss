@@ -1,0 +1,71 @@
+@use 'src/styles/vars' as v;
+
+.book {
+    display: flex;
+    justify-content: space-between;
+    background-color: #5dd2e526;
+    padding: 5rem 7rem;
+}
+.bookaseat {
+    width: 60%;
+    text-align: left;
+    font-size: 1.8rem;
+    &__description {
+        color: v.$color-graytext;
+        line-height: 2rem;
+    }
+}
+.goals {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    padding: 2rem 0;
+    color: v.$color-graytext;
+    & p {
+        display: flex;
+        align-items: center;
+    }
+}
+.formcontainer {
+    width: 35%;
+}
+.bookingform {
+    background-color: v.$color-blue;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 4rem;
+    margin-bottom: 8rem;
+    & label {
+        text-align:left
+    }
+    & input {
+        width: 100%;
+        color: v.$color-graytext;
+        border-radius: .5rem;
+        height: 4.5rem;
+        border: none;
+        font-size: 1.6rem;
+        padding-left: 2rem;
+        font-family: v.$font-paragraph;
+    }
+    &__input--select {
+            background-color: v.$color-white;
+            width: 100%;
+            margin-top: 2rem;
+}
+    &__button {
+        color: v.$color-white;
+        text-decoration: none;
+        font-size: 1.8rem;
+        background-color: v.$color-darkblue;
+        border-radius: 50rem;
+        width: 100%;
+        height: 5.5rem;
+        border: none;
+        cursor: pointer;
+        margin-top: 2rem;
+        &:hover {
+            background-color: v.$color-bluebtn;
+        }
+    }
+}

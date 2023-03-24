@@ -1,9 +1,11 @@
 import {
-  SAVE_ARTICLES
+  SAVE_ARTICLES,
+  SAVE_SINGLE_ARTICLE
 } from "../actions/articles";
 
 const initialState = {
-  articles: ""
+  articles: "",
+  singleArticle: ""
 };
 
 function articlesReducer(state = initialState, action = {}) {
@@ -17,6 +19,11 @@ function articlesReducer(state = initialState, action = {}) {
         ...state,
         articles: payload.data
       }
+    case SAVE_SINGLE_ARTICLE:
+      return {
+        ...state,
+        singleArticle: payload.data,
+        }
       default:
         return state;
   }

@@ -32,6 +32,9 @@
         &__icon {
             width: 5.5rem;
             height: 5.5rem;
+            &:hover {
+                transform: scale(1.1)
+            }
         }
         &__login {
             color: v.$color-darkblue;

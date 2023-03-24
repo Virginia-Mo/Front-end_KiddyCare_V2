@@ -1,9 +1,10 @@
 import {
-  SAVE_CLASSES
+  SAVE_CLASSES, SAVE_CLASS_REQUEST
 } from "../actions/classes";
 
 const initialState = {
-  classes: ""
+  classes: "",
+  classRequest : ""
 };
 
 function classesReducer(state = initialState, action = {}) {
@@ -17,9 +18,15 @@ function classesReducer(state = initialState, action = {}) {
         ...state,
         classes: payload.data
       }
+    case SAVE_CLASS_REQUEST: 
+    return {
+      ...state,
+      classRequest : payload.data
+    }
       default:
         return state;
   }
+  
 }
 
 export default classesReducer;

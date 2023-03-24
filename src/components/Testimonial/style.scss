@@ -1,9 +1,17 @@
 @use 'src/styles/vars' as v;
 
+.testimonial {
+    text-align: center;
+}
+.parentsContainer {
+    margin-bottom: 3rem;
+}
 .parents {
     width: 70%;
     margin: 0 auto;
+
     &__speech {
+    text-align: left;
     background-color: v.$color-gray;
     box-shadow: 0 .1rem .4rem v.$color-grayborder;
     padding: 2rem;
@@ -13,12 +21,13 @@
 }
     &__infos {
     display: flex;
-    padding: 2rem 0;
+    padding: 2rem 0 5rem;
+    gap: 2rem;
         &-image {
             border-radius: 50%;
             width: 7rem;
             margin-right: 2rem;
-    }   
+        }   
         &-name {
             display: flex;
             flex-direction: column;

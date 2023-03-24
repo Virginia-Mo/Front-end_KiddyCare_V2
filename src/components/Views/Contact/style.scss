@@ -1,0 +1,54 @@
+@use 'src/styles/vars' as v;
+.contactcontent {
+    margin: 2rem;
+}
+.contact {
+    &__book {
+    padding: 1rem 7rem;
+    }
+    &__container {
+    display: flex;
+    gap: 5rem;
+    }
+    &__formcontainer--lastPage {
+    height: 100%;
+    }
+    &__infos {
+    padding: 2rem 0;
+    color: v.$color-graytext;
+    }
+    &_p {
+    padding: 1rem 0 2rem;
+    line-height: 2.8rem;
+    }
+    &__contact-img {
+    background-color: v.$color-blue;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }   
+    &--image {
+    height: 2rem;
+    }
+    &__details {
+    color: v.$color-darkblue;
+    padding: .5rem 0;
+}
+}
+.details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 1rem;
+}
+
+.footer {
+    &__contact-content {
+        display: flex;
+        padding: 1rem 0;
+        }
+
+}

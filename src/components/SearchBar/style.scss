@@ -1,0 +1,29 @@
+@use 'src/styles/vars' as v;
+
+.search__form {
+    display: flex;
+    justify-content: center;
+    margin: 4rem 0;
+    & input {
+        width: 40%;
+        border-radius : 0.5rem 0 0 0.5rem;
+        font-size : 2rem;
+        padding: 1rem;
+    }
+    & button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        &:active {
+            transform: scale(0.8);
+        }
+    }
+}
+.searchIcon {
+    font-size: 5rem;
+    height: 3.5rem;
+    color: v.$color-darkblue;
+    border : 0.1rem solid #dee2e6;
+    border-radius : 0 0.5rem 0.5rem 0 ;
+        
+}

@@ -1,24 +1,48 @@
+import { Link } from "react-router-dom"
 import { MdOutlineAccountCircle } from "react-icons/md"
-import "./style.scss"
+import { useDispatch } from "react-redux"
 import logo from "../../assets/imgs/people.png"
+// component
 import NavBar from "../NavBar"
+// actions
+import { logOutUser } from "../../actions/login"
+import "./style.scss"
 
 function Header() {
-  return (
+  const dispatch = useDispatch();
+  const userRole = localStorage.getItem('userRole')
+
+  const handleClick = () => {
+    localStorage.clear();
+    dispatch(logOutUser())
+  }
+return (
     <nav className="header">
       <div className="header__logo">
+      <Link to='/'>
         <img src={logo} alt="kiddycare logo" />
         <p>KiddyCare</p>
+      </Link>
       </div>
       <div className="header__navbar">
         <NavBar />
       </div>
-      <div className="header__account">
+      { userRole && (
+        <Link to="/admin"  className="header__account">
         <p>
           <MdOutlineAccountCircle className="header__account__icon"/>
         </p>
-        <p className="header__account__login">Log in</p>
-      </div>
+        <button type="button" className="header__account__login" onClick={handleClick}>Log out</button>
+        </Link>
+      )}
+      { !userRole && (
+        <Link to="/login" className="header__account">
+        <p>
+          <MdOutlineAccountCircle className="header__account__icon"/>
+        </p>
+        <p  className="header__account__login">Log in</p>
+      </Link>
+      )}
     </nav>
   )
 }

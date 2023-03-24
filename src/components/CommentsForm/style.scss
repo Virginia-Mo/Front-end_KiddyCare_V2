@@ -1,0 +1,35 @@
+@use 'src/styles/vars' as v;
+
+.contactform__input {
+    width: 90%;
+    height: 3.5rem;
+    border-radius: .5rem;
+    border: .1rem solid v.$color-grayborder;
+}
+
+.contact {
+    &__formcontainer {
+    background-color: v.$color-gray;
+    color: v.$color-graytext;
+    padding: 1rem 5rem;
+}
+    &__form--blog {
+        display: flex;
+        flex-direction: column;
+    }
+    &__message {
+        height: 10rem;
+        margin-bottom: 1rem;
+    }
+    &__btn--comment {
+        border: none;
+        color: v.$color-white;
+        font-size: 1.8rem;
+        background-color: v.$color-blue;
+        border-radius: 50rem;
+        width: 15rem;
+        height: 4.5rem;
+        margin: 3rem auto;
+        cursor: pointer;
+    }
+}

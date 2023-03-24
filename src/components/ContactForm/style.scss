@@ -1,0 +1,30 @@
+@use 'src/styles/vars' as v;
+
+
+.contact__bookingform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    & input {
+    width: 80%;
+    border: .1rem solid v.$color-grayborder;
+    color: v.$color-graytext;
+    border-radius: .5rem;
+    height: 4rem;
+    font-size: 1.6rem;
+    padding-left: 2rem;
+    margin: .5rem;
+    font-family: 'Nunito',sans-serif;
+}
+    & button {
+        border: none;
+        width: 50%;
+        margin: 2rem 0 1rem;
+    }
+    }
+
+
+.btnsubmit {
+    margin: 3rem 0;
+}

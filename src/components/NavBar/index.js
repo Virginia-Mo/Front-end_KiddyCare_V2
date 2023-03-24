@@ -1,10 +1,22 @@
 import "./style.scss"
 import { NavLink } from "react-router-dom"
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getArticles } from "../../actions/articles";
 
 import "animate.css"
 
 function NavBar() {
+  const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getArticles());
+      }, [dispatch]);
+
+    const articles = useSelector((state) => state.articles.articles);
+    const lastArticle = articles[0]
+
   return (
     <ul>
       <li className="header__li">
@@ -41,13 +53,15 @@ function NavBar() {
             <NavLink to="/articles" className="header__li__navlink header__li--underlist animate__animated animate__zoomIn">
               Articles
             </NavLink>
-            <NavLink to="/articles/:id" className="header__li__navlink header__li--underlist animate__animated animate__zoomIn">
+            {lastArticle && 
+            <NavLink to={`/articles/${lastArticle.id}`} className="header__li__navlink header__li--underlist animate__animated animate__zoomIn">
               Last Article
             </NavLink>
+            }
         </div>
       </li>
       <li className="header__li">
-        <NavLink to="/" className="header__li__navlink">
+        <NavLink to="/contact" className="header__li__navlink">
           Contact
         </NavLink>
       </li>
