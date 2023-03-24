@@ -28,7 +28,7 @@ function ClassRequestAdmin() {
     <div className="adminContainer">
         <NavBarAdmin />  
     <div className="backoffice">
-    <h2 className="backoffice__title">Classes Booking Request</h2>
+    <h2 className="backOffice__title">Classes Booking Request</h2>
   
    <div className="backoffice__div">
 
@@ -53,7 +53,7 @@ function ClassRequestAdmin() {
 
    <tr key={request.id}>
    <td className="backOffice__table--td">
-             <button type='button' onClick={event => handleClick(event,request.id)}> <HiOutlineTrash /> </button>
+             <button type='button' className='backOffice__button' onClick={event => handleClick(event,request.id)}> <HiOutlineTrash /> </button>
          </td>
         <td className="backOffice__table--td">
              <p> {request.id}   </p>

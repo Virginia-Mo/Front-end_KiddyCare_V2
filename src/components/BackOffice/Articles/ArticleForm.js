@@ -32,8 +32,8 @@ function ArticleForm() {
     <SecondHeader mainTitle='Welcome' />
     <div className="adminContainer">
         <NavBarAdmin />  
-    <div className="backoffice">
-    <h2 className="backoffice__title">Create an article</h2>
+    <div className="backoffice backOffice--formArticle">
+    <h2 className="backOffice__title">Create an article</h2>
   
    <div className="backoffice__div">
 

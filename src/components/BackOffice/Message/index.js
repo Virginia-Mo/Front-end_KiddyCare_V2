@@ -29,7 +29,7 @@ function MessageAdmin() {
     <div className="adminContainer">
         <NavBarAdmin />  
     <div className="backoffice">
-    <h2 className="backoffice__title">Messages</h2>
+    <h2 className="backOffice__title">Messages</h2>
    <div className="backoffice__div">
     <div className="backOffice__mainContainer">
     { (messages.length ===0) && (
@@ -52,7 +52,7 @@ function MessageAdmin() {
  { messages.map(message => (
    <tr key={message.id}>
    <td className="backOffice__table--td">
-             <button type='button' onClick={event => handleClick(event,message.id)}> <HiOutlineTrash /> </button>
+             <button type='button' className='backOffice__button' onClick={event => handleClick(event,message.id)}> <HiOutlineTrash /> </button>
          </td>
         <td className="backOffice__table--td">
              <p> {message.id}   </p>

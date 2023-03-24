@@ -32,9 +32,9 @@ function ArticlesAdmin() {
     <div className="adminContainer">
         <NavBarAdmin />  
     <div className="backoffice">
-    <h2 className="backoffice__title">Articles</h2>
+    <h2 className="backOffice__title">Articles</h2>
   
-   <div className="backoffice__div">
+   <div className="backOffice__div">
 
     <div className="backOffice__mainContainer">
 { !articles && (
@@ -44,7 +44,10 @@ function ArticlesAdmin() {
        <div className="backOffice__table">
        <table className="backOffice__table--table">
        <thead className="backOffice__table--thead">
-     <tr>
+     <tr>   
+     <th> <Link to='/admin/createarticle' >
+    <button type='button' className="backOffice__button--add" >+ Add an article</button>
+    </Link></th>
         <th>Article N°</th> 
         <th>Main title</th>
         <th>Introduction</th>
@@ -52,34 +55,30 @@ function ArticlesAdmin() {
      </tr>
 </thead>
 <tbody className="backOffice__table--tbody">
-    <tr>
-    <Link to='/admin/createarticle' >
-    <button type='button' className="backOffice__add" >+ Add an article</button>
-    </Link>
-    </tr>
  { articles.map(request => (
    <tr key={request.id}>
    {(request.id >=1 && request.id <= 7) && (
        <td className="backOffice__table--td">
-             <button type='button'> <TbTrashOff /> </button>
+             <button className='backOffice__button' type='button'> <TbTrashOff /> </button>
          </td>
    )}
-   {(request.id >8 ) && (
+   {(request.id > 8 ) && (
        <td className="backOffice__table--td">
-             <button type='button' onClick={event => handleClick(event,request.id)}> <HiOutlineTrash /> </button>
+             <button className='backOffice__button' type='button' onClick={event => handleClick(event,request.id)}> <HiOutlineTrash /> </button>
          </td>
-   )}<Link to={`/admin/article/${request.id}`} >
+   )}
+   
         <td className="backOffice__table--td">
-             <p> {request.id}   </p>
+            <Link to={`/admin/article/${request.id}`} > <p> {request.id}   </p>  </Link>
          </td>
         <td className="backOffice__table--td">
-            <p> {request.maintitle} </p> 
+        <Link to={`/admin/article/${request.id}`} ><p> {request.maintitle} </p>  </Link>
         </td>
         <td className="backOffice__table--td">
-            <p> {request.introduction} </p> </td>
+        <Link to={`/admin/article/${request.id}`} ><p> {request.introduction} </p>  </Link></td>
         <td className="backOffice__table--td">
-            <p> {request.createdAt} </p> </td>
-        </Link>
+        <Link to={`/admin/article/${request.id}`} > <p> {request.createdAt} </p>  </Link></td>
+      
         </tr>  
     
  ))} 

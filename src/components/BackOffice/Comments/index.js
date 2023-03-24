@@ -31,7 +31,7 @@ function CommentsAdmin() {
     <div className="adminContainer">
         <NavBarAdmin />  
     <div className="backoffice">
-    <h2 className="backoffice__title">Comments</h2>
+    <h2 className="backOffice__title">Comments</h2>
    <div className="backoffice__div">
     <div className="backOffice__mainContainer">
 { !comments && (
@@ -55,12 +55,12 @@ function CommentsAdmin() {
    <tr key={request.id}>
    {(request.id >=1 && request.id <= 7) && (
        <td className="backOffice__table--td">
-             <button type='button'> <TbTrashOff /> </button>
+             <button type='button' className='backOffice__button'> <TbTrashOff /> </button>
          </td>
    )}
    {(request.id >= 8 ) && (
        <td className="backOffice__table--td">
-             <button type='button' onClick={event => handleClick(event,request.id)}> <HiOutlineTrash /> </button>
+             <button type='button' className='backOffice__button' onClick={event => handleClick(event,request.id)}> <HiOutlineTrash /> </button>
          </td>
    )}
         <td className="backOffice__table--td">
