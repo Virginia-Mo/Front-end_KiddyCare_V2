@@ -35,15 +35,14 @@ const articlesAPI = (store) => (next) => (action) => {
       next(action);
       break;
       case DELETE_ARTICLE: 
-    axios
-    .delete(`${API_URL}/admin/removearticle/${idSelected}`, {
+      axios
+      .delete(`${API_URL}/admin/removearticle/${idSelected}`, {
       headers : { role: `${userRole}` }
-    })
-    .then((response) => {
+      })
+      .then((response) => {
       console.log(response.data)
-    })
-    .catch((error) => console.log(error))
-    next(action);
+      })
+      .catch((error) => console.log(error))
     break;
     case CREATE_ARTICLE:
         axios

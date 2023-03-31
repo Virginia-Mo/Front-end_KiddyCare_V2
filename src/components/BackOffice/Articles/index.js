@@ -13,18 +13,17 @@ import './style.scss'
 
 function ArticlesAdmin() {
     const dispatch = useDispatch()
-
+   const articles = useSelector((state) => state.articles.articles)
     useEffect(() => {
         dispatch(getArticles())
     }, [dispatch])
-
-    const articles = useSelector((state) => state.articles.articles)
 
     const handleClick = (event, id) => {
         event.preventDefault();
         dispatch(saveId(id))
         dispatch(deleteArticle())
-        dispatch(getArticles())
+        // eslint-disable-next-line no-restricted-globals
+        location.reload()
     }
   return (
       <>
@@ -48,7 +47,7 @@ function ArticlesAdmin() {
      <th> <Link to='/admin/createarticle' >
     <button type='button' className="backOffice__button--add" >+ Add an article</button>
     </Link></th>
-        <th>Article N°</th> 
+        <th>N°</th> 
         <th>Main title</th>
         <th>Introduction</th>
         <th>Date</th>

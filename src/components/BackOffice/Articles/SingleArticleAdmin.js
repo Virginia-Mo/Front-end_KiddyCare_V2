@@ -45,15 +45,15 @@ function SingleArticleAdmin() {
     <SecondHeader mainTitle='Welcome' />
     <div className="adminContainer">
         <NavBarAdmin />  
-    <div className="backoffice">
-    <h2 className="backoffice__title">Update an article</h2>
+    <div className="backoffice backOffice--formArticle">
+    <h2 className="backOffice__title">Update an article</h2>
   
-   <div className="backoffice__div">
+   <div className="backOffice__div">
 
     <div className="backOffice__mainContainer">
 
     <form action="" method="POST" encType="multipart/form-data" className="formArticle" onSubmit={handleSubmit}>
-       <FormFieldArticle
+      <div> <FormFieldArticle
             name="maintitle"
             type="text"
             label="Main Title"
@@ -102,6 +102,8 @@ function SingleArticleAdmin() {
             defaultValue={article.title2}
             placeholder={article.title2}
             className="bookingform__input--contact" />
+            </div>
+            <div>
         <FormFieldArticle
             name="img2"
             type="text"
@@ -116,6 +118,7 @@ function SingleArticleAdmin() {
             defaultValue={article.description2}
             placeholder={article.description2}
             className="bookingform__input--contact" />
+            <p>Category</p>
         <select name="tag" id="tag" className="bookingform__input bookingform__input--select" onChange={handleChange}>
             {   tags &&
                 tags.map((data) => (
@@ -144,10 +147,9 @@ function SingleArticleAdmin() {
             defaultValue={article.authorjob}
             placeholder={article.job}
             className="bookingform__input--contact" />
-
+            </div>   </form>
    <div className="buttonDiv" ><button type="submit" className="createButton">Create</button></div>
 
-    </form>
     </div>
 </div>
 </div>

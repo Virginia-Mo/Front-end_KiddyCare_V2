@@ -10,6 +10,21 @@
 #menu, #menu-bg{
   display: none;
 }
+.contactform__input {
+  margin: 1rem;
+}
+.createButton {
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #1398ad;
+  border: none;
+  border-radius: 5px;
+  font-size: 2rem;
+  color: #fff;
+  &:hover {
+    background-color: v.$color-blue;
+  }
+}
 .backOffice {
     &__title {
         font-size: 3rem;
@@ -72,6 +87,11 @@
           border-radius: 1rem;
           padding: 1rem;
           margin-top: 2rem;
+          &:hover {
+            transition: all 0.3s ease-in-out;
+            background-color: v.$color-grayborder;
+            color: v.$color-blue;
+          }
       }
        &--link {
         display: flex;
@@ -93,6 +113,9 @@
     font-size: 1.6rem;
     line-height: 1.6rem;
     }
+  &__table--thead, &__table--tbody td {
+    padding: 0.5rem 2rem;
+  }
  
  &__formDiv__box {
    font-style: 500;
@@ -190,30 +213,7 @@
     border-bottom: 0;
   }
   }
-  .backOffice__filter {
-      &--select {
-        display: none;
-        &--show {
-      display: block;
-    }
-  }
-  &__form {
-    flex-direction: column;
-  }
-  &--label {
-    display: none;
-  }
-  &--button {
-      border: none;
-      background-color: transparent;
-      text-align: center;
-      margin: 0 auto;
-      font-size: 2.5rem;
-      display: block;
-        &--button--hide {
-          display: none;
-        }}
-  }
+
   .backOffice__top2 {
     padding: 0;
   border-radius: 11px;
@@ -222,3 +222,6 @@
     flex-direction: column;
   }
 }
+.formArticle div {
+    width: 100%;
+  }

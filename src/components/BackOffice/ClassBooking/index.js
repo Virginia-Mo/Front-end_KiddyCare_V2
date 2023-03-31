@@ -16,6 +16,7 @@ function ClassRequestAdmin() {
     useEffect(() => {
         dispatch(getClassRequest())
     }, [dispatch])
+    
     const handleClick = (event, id) => {
         event.preventDefault();
         dispatch(saveId(id))
@@ -41,7 +42,8 @@ function ClassRequestAdmin() {
        <table className="backOffice__table--table">
        <thead className="backOffice__table--thead">
      <tr>
-         <th>Request N°</th> 
+        <th/>
+         <th>N°</th> 
          <th>Name</th>
           <th>Email</th>
           <th>Class</th>

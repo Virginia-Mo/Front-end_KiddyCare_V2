@@ -78,7 +78,6 @@
 }
 .formArticle {
     display: flex;
-    flex-direction: column;
     &__div {
         padding: 3rem 0;
         display: flex;
@@ -106,14 +105,7 @@
         background-color: v.$color-bluebtn
     }
 }
-.createButton {
-    padding: 1rem;
-    background-color: #1398ad;
-    border: none;
-    border-radius: 5px;
-    font-size: 2rem;
-    color: #fff;
-}
+
 .buttonDiv {
     text-align: center;
 }

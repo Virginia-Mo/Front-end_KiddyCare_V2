@@ -43,10 +43,10 @@ function CommentsAdmin() {
        <thead className="backOffice__table--thead">
      <tr>
      <th /> 
-         <th>Request N°</th> 
+         <th>N°</th> 
          <th>Name</th>
           <th>Email</th>
-          <th>Message</th>
+          <th>Comment</th>
           <th>Date</th>
      </tr>
 </thead>

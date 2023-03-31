@@ -40,7 +40,7 @@ function ArticleForm() {
     <div className="backOffice__mainContainer">
 
     <form action="" method="POST" encType="multipart/form-data" className="formArticle" onSubmit={handleSubmit}>
-        <FormField
+       <div><FormField
             name="maintitle"
             type="text"
             label="Main Title"
@@ -70,6 +70,8 @@ function ArticleForm() {
             type="text"
             label="First Description"
             className="bookingform__input--contact" />
+            </div> 
+            <div>
         <FormField
             name="title2"
             type="text"
@@ -85,6 +87,7 @@ function ArticleForm() {
             type="text"
             label="Second Description"
             className="bookingform__input--contact" />
+        <p>Category</p>
         <select name="tag" id="tag" className="bookingform__input bookingform__input--select" onChange={handleChange}>
 
             {   tags &&
@@ -109,10 +112,11 @@ function ArticleForm() {
             type="text"
             label="Your job"
             className="bookingform__input--contact" />
-
-   <div className="buttonDiv" ><button type="submit" className="createButton">Create</button></div>
-
-    </form>
+        </div>
+        </form>
+   <div className="buttonDiv">
+   <button type="submit" className="createButton">Create</button>
+   </div>
     </div>
 </div>
 </div>
