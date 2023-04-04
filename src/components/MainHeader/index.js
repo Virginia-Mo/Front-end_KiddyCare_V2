@@ -7,6 +7,7 @@ import NavBar from "../NavBar"
 // actions
 import { logOutUser } from "../../actions/login"
 import "./style.scss"
+import MenuBurger from "../MenuBurger"
 
 function Header() {
   const dispatch = useDispatch();
@@ -25,10 +26,11 @@ return (
       </Link>
       </div>
       <div className="header__navbar">
-        <NavBar />
+        <MenuBurger className="menuBurger__component"/>
+        <div className="navBar__component"> <NavBar /></div>
       </div>
       { userRole && (
-        <Link to="/admin"  className="header__account">
+        <Link to="/admin" className="header__account">
         <p>
           <MdOutlineAccountCircle className="header__account__icon"/>
         </p>

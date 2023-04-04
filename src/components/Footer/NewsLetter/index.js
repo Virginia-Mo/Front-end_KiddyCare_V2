@@ -17,19 +17,22 @@ function NewsLetter() {
       <h2 className="footer__title">Newsletter</h2>
       <div>
         <form method="POST" className="newsletterform" onSubmit={handleSubmit}>
+        <div>
         <FormField
                 name="nameRequest"
                 type="text"
                 label="Name"
                 placeholder="Your Name"
-                className="bookingform__input bookingform__input--newsletter" />
+                className="" />
+        </div>
+        <div>
         <FormField
                 name="emailRequest"
                 type="email"
                 label="E-mail"
                 placeholder="Your Email"
-                className="bookingform__input bookingform__input--newsletter" />    
-
+                 />    
+                </div>
           <button type="submit" className="button--blue requestNL btnSubmit">
             Submit Now
           </button>

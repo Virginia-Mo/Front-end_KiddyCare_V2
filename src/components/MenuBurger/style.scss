@@ -1,0 +1,29 @@
+@use 'src/styles/vars' as v;
+
+.menuburger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    &__nav {
+        display:flex;
+        justify-content: center;
+        & ul {
+            flex-direction: column;
+            gap: 5rem;
+
+        }
+    }
+}
+.opened {
+    background-color: rgb(202, 240, 241);
+}
+.closed {
+    height: 0;
+}
+@media screen and (min-width: 1024px){
+    .menuburger {
+        display: none;
+    }
+}

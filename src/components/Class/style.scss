@@ -67,3 +67,14 @@
         background-color: v.$color-bluebtn; 
     }
 }
+@media screen and (max-width: 1024px){
+    .classes__container {
+        flex-direction: column;
+    }
+    .classescontent {
+        width: 100%;
+    }
+    .parents__infos {
+        flex-direction: column;
+    }
+}

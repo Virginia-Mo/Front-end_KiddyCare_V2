@@ -42,3 +42,16 @@
 
     }
 }
+@media screen and (max-width: 1024px){
+    .navBar__component, .header__account {
+        display : none
+    }
+    .header__logo p {
+        display: none
+    }
+}
+@media screen and (min-width: 1024px){
+    .burgerMenu__component {
+        display : none
+    }
+}

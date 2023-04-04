@@ -51,3 +51,12 @@
         margin-top: 5rem;
     }
 }
+@media screen and (max-width: 1024px){
+    .school-description {
+        flex-direction: column;
+
+        &__image {
+            width: 100%;
+        }
+    }
+}
