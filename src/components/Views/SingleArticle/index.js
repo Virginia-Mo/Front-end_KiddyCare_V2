@@ -15,6 +15,7 @@ import './style.scss'
 function SingleProductPage() {
     const { slug } = useParams()
     const dispatch = useDispatch();
+    window.scroll(0,0)
 
     useEffect(() => {
         dispatch(getArticles());

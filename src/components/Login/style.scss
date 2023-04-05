@@ -109,3 +109,8 @@
 .buttonDiv {
     text-align: center;
 }
+@media screen and (max-width : 1024px) {
+    .loginForm {
+        width: 95%;
+    }
+}

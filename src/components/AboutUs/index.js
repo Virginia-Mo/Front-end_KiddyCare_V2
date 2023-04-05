@@ -1,13 +1,21 @@
 import "./style.scss"
+import AOS from 'aos';
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 import Image from "../../assets/imgs/about-1.jpg"
 
 function AboutUs() {
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+      }, []);
+
   return (
-    <section className="school-description">
+    <section className="school-description" data-aos="zoom-in" data-aos-duration="2000">
     <div className="school-description__img">
         <img src={Image} alt="about" className="school-description__image" />
     </div>
-    <article className="aboutus">
+    <article className="aboutus" >
         <h3 className="content__subtitle">Learn about us</h3>
         <h2 className="content__title">Best School For Your Kids</h2>
         <p className="aboutus__content">Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor

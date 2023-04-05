@@ -148,3 +148,10 @@ aside {
 .left {
     text-align: left;
 }
+@media screen and (max-width: 1024px){
+    .bigcontainer {
+        padding: 2rem 0.5rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

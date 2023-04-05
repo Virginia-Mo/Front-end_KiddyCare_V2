@@ -13,6 +13,10 @@
         display: flex;
         align-items: center;
         margin-left: 2rem;
+    a {
+        display:flex;
+        align-items: center;
+    }
     img {
         width: 10rem;
         height: 10rem;
@@ -26,7 +30,7 @@
         }
     }
     &__account {
-        color: v.$color-bluebtn;
+        color: v.$color-blue;
         margin-top: 2rem;
         margin-right: 3rem;
         &__icon {
@@ -37,21 +41,37 @@
             }
         }
         &__login {
-            color: v.$color-darkblue;
+            color: v.$color-blue;
+            border: none;
+            border-radius: 0.5rem;
+            font-size:1.8rem;
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
     }
 }
 @media screen and (max-width: 1024px){
-    .navBar__component, .header__account {
+    .navBar__component, .loginIconDiv  {
         display : none
     }
     .header__logo p {
-        display: none
+       font-size: 3rem;
+    }
+    .header__logo img {
+        width: 6rem;
+        height: 6rem;
     }
 }
 @media screen and (min-width: 1024px){
-    .burgerMenu__component {
+    .burgerMenu__component{
         display : none
     }
+}
+@media screen and (max-width: 768px){
+    .header__logo p {
+       font-size: 2rem;
+    }
+
 }

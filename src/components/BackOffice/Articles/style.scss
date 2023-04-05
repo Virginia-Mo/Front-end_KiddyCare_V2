@@ -10,9 +10,6 @@
 #menu, #menu-bg{
   display: none;
 }
-.contactform__input {
-  margin: 1rem;
-}
 .createButton {
   padding: 1rem;
   margin-top: 1rem;
@@ -24,6 +21,9 @@
   &:hover {
     background-color: v.$color-blue;
   }
+}
+.articleform__input--select {
+  margin: 0;
 }
 .backOffice {
     &__title {
@@ -161,7 +161,18 @@
   .customerAccount__title--admin {
     margin: 7rem 7rem 0;
   }
-  .backOffice{
+  .adminContainer {
+    flex-direction:column
+  }
+  .backOffice {
+    &--formArticle {
+      width: auto;
+      margin: 1rem;
+    }
+    &__mainContainer {
+      margin: 0;
+      padding: 1rem;
+    }
   &__formDetails {
     flex-direction: column;
   }
@@ -201,7 +212,7 @@
     border-bottom: 1px solid #ddd;
     display: block;
     font-size: 1em;
-    text-align: right;
+    text-align: left;
   }
   &--table td::before {
     content: attr(data-label);
@@ -222,6 +233,15 @@
     flex-direction: column;
   }
 }
-.formArticle div {
+.formArticle {
+  flex-direction: column;
+}
+.formArticle--div {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    & div {
+      gap: 0.5em;
+    }
   }

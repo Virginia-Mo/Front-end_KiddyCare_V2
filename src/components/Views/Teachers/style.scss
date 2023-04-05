@@ -32,3 +32,8 @@
         color: v.$color-graytext;
     }
 }
+@media screen and (max-width: 1024px){
+    .teachers {
+        width: 80%;
+}
+}

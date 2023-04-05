@@ -29,6 +29,7 @@ function Testimonial() {
             <div>
             <Swiper
         loop
+        grabCursor
         slidesPerView={1}
         spaceBetween={30}
         keyboard={{

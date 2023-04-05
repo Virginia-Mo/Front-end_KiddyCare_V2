@@ -51,7 +51,7 @@
     &__input--select {
             background-color: v.$color-white;
             width: 100%;
-            margin-top: 2rem;
+            margin: 1rem;
 }
     &__button {
         color: v.$color-white;
@@ -67,5 +67,14 @@
         &:hover {
             background-color: v.$color-bluebtn;
         }
+    }
+}
+@media screen and (max-width : 1024px) {
+    .book {
+        flex-direction: column;
+        padding: 2rem;
+    }
+    .bookaseat, .formcontainer {
+        width: 100%;
     }
 }

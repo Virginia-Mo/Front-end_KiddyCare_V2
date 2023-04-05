@@ -1,4 +1,7 @@
 import { BsPatchCheck } from "react-icons/bs";
+import AOS from 'aos';
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 import SecondHeader from '../../SecondHeader';
 import Cards from '../../Cards';
 import image from "../../../assets/imgs/about-1.jpg";
@@ -6,11 +9,15 @@ import image2 from "../../../assets/imgs/about-2.jpg";
 import './style.scss'
 
 function AboutPage() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <><SecondHeader mainTitle='About Us' /><main>
           <div className="container">
               <Cards />
-              <section>
+              <section data-aos="zoom-in" data-aos-duration="2000">
               <article className="school-description">
                   <div>
                       <img src={image} alt="about" className="school-description__image" />
@@ -37,7 +44,7 @@ function AboutPage() {
                   </div>
               </article> 
             <article className="aboutus__checkpoint">
-                          <div>
+                          <div className="school-description__imgContainer">
                           <img src={image2} alt="about2" className="schooldescription__image"/>
                           </div>
                           <div className="aboutus__goals">

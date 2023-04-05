@@ -30,7 +30,6 @@
 .aboutus {
     margin: 3rem 7rem;
     text-align: left;
-
     &__content {
         color: v.$color-graytext;
         line-height: 2.5rem;
@@ -50,13 +49,56 @@
         align-items: center;  
         margin-top: 5rem;
     }
+    &__checkpoint {
+        display: flex;
+        padding: 2.5rem 0;
+        margin: 2rem auto;
+        width: 50%;
+        font-size: 2rem;
+    }
+    &__goals {
+        display: flex;
+        justify-content: center;
+        flex-flow: column wrap;
+        margin-left: 3rem;
+        width: 100%;
+        border-bottom: .05rem solid v.$color-grayborder;
+        &-span {
+            color: v.$color-graytext;
+            border-top: .05rem solid v.$color-grayborder;
+            padding: 1rem 0;
+            text-align: left;
+            display: flex;
+        }
+    }
 }
 @media screen and (max-width: 1024px){
     .school-description {
         flex-direction: column;
-
         &__image {
             width: 100%;
         }
+        &__imgContainer {
+            margin: 0 auto;
+        }
+    }
+    .aboutus {
+        margin: 1rem 2rem;
+        text-align: justify;
+        &__checkpoint {
+            flex-direction: column;
+            margin: 1rem 0;
+            width: 100%;
+        }
+        &__content {
+            width: 95%;
+        }
+        &__goals {
+            margin: 1rem 1.5rem;
+            width: auto;
+        }
+    }
+    .content__title {
+        font-size: 3rem;
     }
 }

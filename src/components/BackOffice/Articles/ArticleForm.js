@@ -40,7 +40,8 @@ function ArticleForm() {
     <div className="backOffice__mainContainer">
 
     <form action="" method="POST" encType="multipart/form-data" className="formArticle" onSubmit={handleSubmit}>
-       <div><FormField
+       <div className='formArticle--div'>
+       <FormField
             name="maintitle"
             type="text"
             label="Main Title"
@@ -88,7 +89,7 @@ function ArticleForm() {
             label="Second Description"
             className="bookingform__input--contact" />
         <p>Category</p>
-        <select name="tag" id="tag" className="bookingform__input bookingform__input--select" onChange={handleChange}>
+        <select name="tag" id="tag" className="bookingform__input articleform__input--select" onChange={handleChange}>
 
             {   tags &&
                 tags.map((data) => (

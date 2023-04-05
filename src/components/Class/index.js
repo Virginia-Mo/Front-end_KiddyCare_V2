@@ -1,11 +1,21 @@
 /* eslint-disable camelcase */
 import './style.scss'
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import AOS from 'aos';
 import image from "../../assets/imgs/class-1.jpg"
+import "aos/dist/aos.css";
+
 
 function Class({id,name,short_description,age,seats,hours,price}) {
+   
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+      }, []);
+
   return (
-    <article className="classescontent" key={id}>
+    <article className="classescontent" key={id} data-aos="zoom-in" data-aos-duration="2000">
         <img src={image} alt="class1" className="classescontent__image" />
             <h3 className="classescontent__name">{name}</h3>
                 <p className="classescontent__description">{short_description}</p>

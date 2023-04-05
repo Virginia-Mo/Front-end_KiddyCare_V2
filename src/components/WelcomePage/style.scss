@@ -16,7 +16,7 @@
         align-items: flex-start;
         padding-left: 5rem;
         background-color:rgb(50 48 48 / 40%);
-        height: 73%;
+        height: 80.5%;
     }
     &__subtitle {
         font-family: v.$font-title;
@@ -45,5 +45,36 @@
         justify-content: center;
         align-items: center;
         margin-top: 3rem;
+    }
+}
+@media screen and (max-width: 1024px){
+    .banner {
+        height: 40rem;
+        &__description {
+            display: none;
+        }
+        &__title {
+            font-size: 3rem;
+        }
+        &__subtitle {
+            font-size: 4rem;
+        }
+        &__part1 {
+            height: 75%;
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    .banner {
+        height: 40rem;
+        &__title {
+            font-size: 2rem;
+        }
+        &__subtitle {
+            font-size: 3rem;
+        }
+        &__part1 {
+            padding: 0;
+        }
     }
 }

@@ -49,12 +49,19 @@
 }
    &__container {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 2.5rem;
+    margin: 2rem;
     flex-wrap: wrap;
     justify-content: center;
 }
 }
 .content__subtitle--border {
     text-align: center;
+}
+@media screen and (max-width: 1024px){
+    .blogarticle {
+        width: 95%;
+    }
 }

@@ -87,6 +87,7 @@ function ClassesPage() {
                 placeholder="Your Email"
                 className="bookingform__input"
                 label="Email" />
+              <span className='label'>Classes</span>
               <select name="classBooked" id="classBooked" className="bookingform__input bookingform__input--select" onChange={handleChange}>
                     {
                          classes.map((data) => (

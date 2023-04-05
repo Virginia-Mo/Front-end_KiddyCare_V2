@@ -1,12 +1,19 @@
+import { useEffect } from 'react';
+import "aos/dist/aos.css";
 import './style.scss'
+import AOS from 'aos';
 import { TbFence } from "react-icons/tb";
 import { GiMusicalScore, GiPencilBrush, GiFruitBowl, GiLightBackpack } from "react-icons/gi";
 import { BiBus } from "react-icons/bi";
 
 function Cards() {
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+      }, []);
   return (
-    <section className="school-activities">
-    <article className="card">
+    <section className="school-activities" >
+    <article className="card" data-aos="fade-up" data-aos-duration="2000">
         <div className="card__icon">
         <TbFence />
         </div>
@@ -16,7 +23,7 @@ function Cards() {
                 lorem amet elitr vero...</p>
         </div>
     </article>
-    <article className="card">
+    <article className="card" data-aos="fade-up" data-aos-duration="2000">
         <div className="card__icon">
         <GiMusicalScore />
         </div>
@@ -26,7 +33,7 @@ function Cards() {
                 lorem amet elitr vero...</p>
         </div>
     </article>
-    <article className="card">
+    <article className="card" data-aos="fade-up" data-aos-duration="2000">
         <div className="card__icon">
         <GiPencilBrush />
         </div>
@@ -36,7 +43,7 @@ function Cards() {
                 lorem amet elitr vero...</p>
         </div>
     </article>
-    <article className="card">
+    <article className="card" data-aos="fade-up" data-aos-duration="2000">
         <div className="card__icon">
             <BiBus />
         </div>
@@ -46,7 +53,7 @@ function Cards() {
                 lorem amet elitr vero...</p>
         </div>
     </article>
-    <article className="card">
+    <article className="card" data-aos="fade-up" data-aos-duration="2000">
         <div className="card__icon">
         <GiFruitBowl />
         </div>
@@ -56,7 +63,7 @@ function Cards() {
                 lorem amet elitr vero...</p>
         </div>
     </article>
-    <article className="card">
+    <article className="card" data-aos="fade-up" data-aos-duration="2000">
         <div className="card__icon">
         <GiLightBackpack />
         </div>

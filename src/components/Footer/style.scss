@@ -9,6 +9,7 @@
     padding: 3rem 2rem;
     &__maindiv {
         display: flex;
+        flex-wrap: wrap;
         gap: 3rem;
     }
     &__links:hover {
@@ -87,7 +88,12 @@
     text-align: center;
 }
 @media screen and (max-width: 1024px){
-    .footer__maindiv {
-        flex-direction: column;
+    .footer {
+        &__school__description {
+            display: none;
+            &--links {
+                margin-top: 1rem;
+            }
+        }
     }
 }

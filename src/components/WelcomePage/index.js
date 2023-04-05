@@ -11,6 +11,7 @@ import Testimonial from '../Testimonial';
 // actions
 import { getClasses } from '../../actions/classes';
 
+
 function WelcomePage() {
   const dispatch = useDispatch();
 
@@ -36,13 +37,13 @@ function WelcomePage() {
         </div>
       </header>
       <main className="mainContent">
-        <Cards />
-        <AboutUs />
+      <Cards />
+      <AboutUs />
       <section className="classes">
         <h3 className="content__subtitle content__subtitle--border">Some of our Classes</h3>
         <h2 className="content__title content__title--center">Classes for Your Kids</h2> 
      { classes && ( 
-      <div className="classes__container">
+      <div className="classes__container" >
        {
         selectedClasses.map((data) => (
          <Class {...data} key={data.id} />
