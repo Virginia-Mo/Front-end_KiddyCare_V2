@@ -11,12 +11,19 @@
         font-weight: 700;
      }
     }
+    &__ul--navbar {
+      display: flex;
+      flex-wrap: wrap;
+    }
     &__li {
         border-left: solid 1px v.$color-graytext;
         padding-left: 1rem;
         margin-right: 2.5rem;
         &:hover {
           text-decoration: underline;
+        }
+        &__navlink--blog {
+          display: flex;
         }
     }
     &__li--underlist {

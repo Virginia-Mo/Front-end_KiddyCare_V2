@@ -22,8 +22,9 @@ function ArticleCard({id, main_img, maintitle, tag, comments, introduction }) {
         <span className="webdesign">{comments.length}</span>                  
 </p>
     <p className="blogarticle__description">{introduction}</p>
-    <Link to={`/articles/${id}`} className="joinclass__btn joinclass__btn--center">Read More</Link>
-    </div>
+    <p><Link to={`/articles/${id}`} className="joinclass__btn joinclass__btn--center">Read More</Link>
+   </p>
+     </div>
 </article>
   );
 }

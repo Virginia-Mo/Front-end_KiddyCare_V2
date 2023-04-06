@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import axios from "axios"
 import { LOGIN, LOG_OUT} from "../actions/login";
+import { getMessageApi } from "../actions/message";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -11,10 +12,9 @@ const loginAPI = (store) => (next) => (action) => {
       case LOG_OUT:
         axios
         .get(`${API_URL}/logout`)
-        .then((response) => {
+        .then(() => {
           localStorage.clear();
           window.location.href='/'
-          console.log(response.data)
         })
         // eslint-disable-next-line no-console
         .catch((error) => console.log(error))
@@ -28,14 +28,13 @@ const loginAPI = (store) => (next) => (action) => {
         }
          )
         .then((response) => {
-          console.log(response.data)
           localStorage.setItem('userRole', response.data.role);
           localStorage.setItem('userId', response.data.id);
           window.location.href = '/'
-          
         })
         // eslint-disable-next-line no-console
-        .catch((error) => console.log(error))
+        .catch((error) => {
+      store.dispatch(getMessageApi(error.response.data))})
       next(action);
       break;
       

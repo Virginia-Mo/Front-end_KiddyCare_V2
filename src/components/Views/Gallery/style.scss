@@ -10,7 +10,7 @@
     color: v.$color-blue;
     border: .1rem solid v.$color-blue;
 }
-#galleryphotos {
+.gallery--container {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;

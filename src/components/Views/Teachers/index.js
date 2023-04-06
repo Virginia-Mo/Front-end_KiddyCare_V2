@@ -7,6 +7,7 @@ import Testimonial from "../../Testimonial"
 import { getTeachers } from '../../../actions/teachers';
 import './style.scss'
 import 'animate.css'
+import Loader from '../../BackOffice/Loader';
 
 function AboutPage() {
   const dispatch = useDispatch();
@@ -24,6 +25,9 @@ function AboutPage() {
             <h3 className="content__subtitle content__subtitle--border">Our teachers</h3>
             <h2 className="content__title content__title--center">Meet Our Teachers</h2>
             <div className="teachers__container  ">
+            { !teachers && (
+              <Loader />
+            )}
             { teachers && (
               teachers.map((data) => (
                 <div className="teachers animate__animated animate__fadeInUp animate__slow " key={data.id}>

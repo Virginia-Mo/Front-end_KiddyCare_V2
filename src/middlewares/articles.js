@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import axios from "axios"
 import { saveArticles, GET_ARTICLES, DELETE_ARTICLE, CREATE_ARTICLE, UPDATE_ARTICLE} from "../actions/articles"
+import { getMessageApi } from "../actions/message";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -40,7 +41,7 @@ const articlesAPI = (store) => (next) => (action) => {
       headers : { role: `${userRole}` }
       })
       .then((response) => {
-      console.log(response.data)
+        store.dispatch(getMessageApi(response.data))
       })
       .catch((error) => console.log(error))
     break;
@@ -68,7 +69,7 @@ const articlesAPI = (store) => (next) => (action) => {
           },
         })
         .then((response) => {
-          store.dispatch(saveArticles(response.data));
+          store.dispatch(getMessageApi(response.data))
         })
         .catch((error) => console.log(error))
       next(action);
@@ -97,7 +98,7 @@ const articlesAPI = (store) => (next) => (action) => {
           },
         })
         .then((response) => {
-          response.json(response.data)
+          store.dispatch(getMessageApi(response.data))
         })
         .catch((error) => console.log(error))
       next(action);

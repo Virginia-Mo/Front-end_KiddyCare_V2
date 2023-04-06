@@ -1,22 +1,29 @@
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 // component
 import FormField from "../../FormField"
 // actions
 import { postNewsletter } from "../../../actions/newsletter"
 import "./style.scss"
+import useEraseMessage from "../../../selectors/eraseMessage"
 
 function NewsLetter() {
   const dispatch = useDispatch()
+  const messageApi = useSelector((state) => state.message.messageApi)
 
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(postNewsletter())
   }
+  useEraseMessage()
   return (
     <div className="footer__container-box">
       <h2 className="footer__title">Newsletter</h2>
       <div>
-        <form method="POST" className="newsletterform" onSubmit={handleSubmit}>
+      { !messageApi && 
+       <p>{messageApi}</p> 
+      }
+      { messageApi && (
+          <form method="POST" className="newsletterform" onSubmit={handleSubmit}>
         <div>
         <FormField
                 name="nameRequest"
@@ -37,6 +44,9 @@ function NewsLetter() {
             Submit Now
           </button>
         </form>
+      )
+      }
+      
       </div>
     </div>
   )

@@ -7,6 +7,7 @@ import SecondHeader from '../../SecondHeader';
 import './style.scss'
 
 function ContactPage() {
+    
   return (
     <><SecondHeader mainTitle='Contact Us' />
     <main>

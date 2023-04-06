@@ -10,25 +10,23 @@ import { getGallery, saveNewGallery } from '../../../actions/gallery';
 
 import 'animate.css'
 import './style.scss'
+import Loader from '../../BackOffice/Loader';
 
 function GalleryPage() {
     let id  = ""
     const dispatch = useDispatch();
+
     useEffect(() => {
-      console.log("TEST")
       dispatch(getGallery());
     }, [dispatch]);
   
-   
+
     const gallery = useSelector((state) => state.gallery.gallery);
     const newGallery = useSelector((state) => state.gallery.filteredGallery);
 
-    // const filteredGallery = gallery.filter((data) => (data.category === id))
-    // console.log(filteredGallery)
     const handleClick = (event) => { 
         id = event.target.id
         const filteredGallery = gallery.filter((data) => (data.category === id))
-        console.log(id)
         dispatch(saveNewGallery(filteredGallery))
     }
     const handleAll = () => {
@@ -51,7 +49,13 @@ function GalleryPage() {
         <button type='button' className="joinclass__btn joinclass__btn--gallery" id="Reading" onClick={handleClick}>Reading</button>
     </section>
     <section className="photos__container"> 
-        <div id="galleryphotos" className="test"> 
+     { !gallery && (
+        <div className="gallery--container"> 
+         <Loader />
+         </div>
+     )}
+     {gallery && (
+        <div id="galleryphotos" className="gallery--container"> 
         { newGallery !== "" && (
             newGallery.map((data) => (
             <Zoom key={data.id}>
@@ -74,6 +78,7 @@ function GalleryPage() {
          ) }
         
         </div>
+        )}
     </section>
     </main>
     </>

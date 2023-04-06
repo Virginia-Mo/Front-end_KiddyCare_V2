@@ -27,3 +27,19 @@ export function deleteMessage() {
     type: DELETE__MESSAGE,
   };
 }
+export const GET_MESSAGE_API = 'GET_MESSAGE_API';
+
+export function getMessageApi(data) {
+  return {
+    type: GET_MESSAGE_API,
+    payload: { data },
+  };
+}
+export const ERASE_MESSAGE_API = 'ERASE_MESSAGE_API';
+
+export function eraseMessageApi() {
+  return {
+    type: ERASE_MESSAGE_API,
+  };
+}
+

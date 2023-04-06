@@ -1,12 +1,20 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 // component
 import FormField from "../FormField";
 // actions
-import { postMessage } from "../../actions/message";
+import { postMessage, eraseMessageApi } from "../../actions/message";
 import './style.scss'
 
 function ContactForm() {
     const dispatch = useDispatch()
+    const messageApi = useSelector((state) => state.message.messageApi)
+
+    useEffect(() => {
+        setTimeout(()=> {
+          dispatch(eraseMessageApi())
+        },3000)
+    }, [dispatch, messageApi])
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -15,7 +23,11 @@ function ContactForm() {
 
   return (
      <article className="contact__formcontainer contact__formcontainer--lastPage">
-         <form action="" method="POST" className="contact__bookingform" onSubmit={handleSubmit}>
+        { !messageApi && (
+            <p> { messageApi }</p>
+        )}
+        { messageApi && (
+    <form action="" method="POST" className="contact__bookingform" onSubmit={handleSubmit}>
      <FormField
          name="name"
          type="text"
@@ -41,6 +53,8 @@ function ContactForm() {
          className="bookingform__input--contact" />
              <button type="submit" className="joinclass__btn btnSubmit">Send Message</button>
          </form>
+        )}
+
      </article>
 
   );

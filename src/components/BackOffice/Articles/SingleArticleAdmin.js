@@ -13,10 +13,12 @@ import { getArticles, saveSingleArticle, updateArticle} from '../../../actions/a
 // selector
 import { findItem } from '../../../selectors/getItemById'
 import './style.scss'
+import useEraseMessage from '../../../selectors/eraseMessage'
 
 function SingleArticleAdmin() {
     const { id } = useParams()
     const dispatch = useDispatch()
+    useEraseMessage()
     useEffect(() => {
         dispatch(getArticles());
         dispatch(getTags());
@@ -24,6 +26,7 @@ function SingleArticleAdmin() {
 
     const tags = useSelector((state) => state.tags.tags);
     const articles = useSelector((state) => state.articles.articles);
+    const messageApi = useSelector((state) => state.message.messageApi)
     
     const singleArticle =  useSelector(() => (
             findItem(articles, id)
@@ -37,7 +40,6 @@ function SingleArticleAdmin() {
 
       const handleSubmit = (event) => {
             event.preventDefault();
-            console.log(event)
             dispatch(updateArticle())
       }
   return (
@@ -48,12 +50,16 @@ function SingleArticleAdmin() {
     <div className="backoffice backOffice--formArticle">
     <h2 className="backOffice__title">Update an article</h2>
   
-   <div className="backOffice__div">
+   <div className="backOffice__div--form">
 
     <div className="backOffice__mainContainer">
-
+    { !messageApi && (
+            <p> { messageApi }</p>
+        )} 
+        { messageApi && (
     <form action="" method="POST" encType="multipart/form-data" className="formArticle" onSubmit={handleSubmit}>
-      <div> <FormFieldArticle
+      <div className='formArticle--div'>
+      <FormFieldArticle
             name="maintitle"
             type="text"
             label="Main Title"
@@ -103,7 +109,7 @@ function SingleArticleAdmin() {
             placeholder={article.title2}
             className="bookingform__input--contact" />
             </div>
-            <div>
+            <div className='formArticle--div'>
         <FormFieldArticle
             name="img2"
             type="text"
@@ -120,6 +126,7 @@ function SingleArticleAdmin() {
             className="bookingform__input--contact" />
             <p>Category</p>
         <select name="tag" id="tag" className="bookingform__input bookingform__input--select" onChange={handleChange}>
+            <option value="Category">Choose a category</option>
             {   tags &&
                 tags.map((data) => (
                 <option value={data.id} key={data.id}>{data.name}</option>
@@ -147,9 +154,12 @@ function SingleArticleAdmin() {
             defaultValue={article.authorjob}
             placeholder={article.job}
             className="bookingform__input--contact" />
-            </div>   </form>
-   <div className="buttonDiv" ><button type="submit" className="createButton">Create</button></div>
-
+            </div>  
+   <div className="buttonDiv">
+   <button type="submit" className="createButton">Create</button>
+   </div> 
+   </form>
+)}
     </div>
 </div>
 </div>

@@ -13,7 +13,7 @@ function Cards() {
       }, []);
   return (
     <section className="school-activities" >
-    <article className="card" data-aos="fade-up" data-aos-duration="2000">
+    <article className="card" data-aos="fade-up" data-aos-duration="1500">
         <div className="card__icon">
         <TbFence />
         </div>
@@ -23,7 +23,7 @@ function Cards() {
                 lorem amet elitr vero...</p>
         </div>
     </article>
-    <article className="card" data-aos="fade-up" data-aos-duration="2000">
+    <article className="card" data-aos="fade-up" data-aos-duration="1500">
         <div className="card__icon">
         <GiMusicalScore />
         </div>
@@ -33,7 +33,7 @@ function Cards() {
                 lorem amet elitr vero...</p>
         </div>
     </article>
-    <article className="card" data-aos="fade-up" data-aos-duration="2000">
+    <article className="card" data-aos="fade-up" data-aos-duration="1500">
         <div className="card__icon">
         <GiPencilBrush />
         </div>
@@ -43,7 +43,7 @@ function Cards() {
                 lorem amet elitr vero...</p>
         </div>
     </article>
-    <article className="card" data-aos="fade-up" data-aos-duration="2000">
+    <article className="card" data-aos="fade-up" data-aos-duration="1500">
         <div className="card__icon">
             <BiBus />
         </div>
@@ -53,7 +53,7 @@ function Cards() {
                 lorem amet elitr vero...</p>
         </div>
     </article>
-    <article className="card" data-aos="fade-up" data-aos-duration="2000">
+    <article className="card" data-aos="fade-up" data-aos-duration="1500">
         <div className="card__icon">
         <GiFruitBowl />
         </div>
@@ -63,7 +63,7 @@ function Cards() {
                 lorem amet elitr vero...</p>
         </div>
     </article>
-    <article className="card" data-aos="fade-up" data-aos-duration="2000">
+    <article className="card" data-aos="fade-up" data-aos-duration="1500">
         <div className="card__icon">
         <GiLightBackpack />
         </div>

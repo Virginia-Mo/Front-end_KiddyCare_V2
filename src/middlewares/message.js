@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
 import axios from "axios"
-import { GET__MESSAGE, POST_MESSAGE, saveMessage, DELETE__MESSAGE } from "../actions/message";
+import { GET__MESSAGE, POST_MESSAGE, saveMessage, DELETE__MESSAGE, getMessageApi } from "../actions/message";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -19,7 +19,7 @@ const messageAPI = (store) => (next) => (action) => {
         }
          )
         .then((response) => {
-          console.log(response.data)
+          store.dispatch(getMessageApi(response.data))
         })
         .catch((error) => console.log(error))
       next(action);

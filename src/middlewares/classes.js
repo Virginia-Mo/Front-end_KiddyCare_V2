@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import axios from "axios"
 import { saveClasses, GET_CLASSES, POST_BOOKING, GET_CLASS_REQUEST, saveClassRequest, DELETE_CLASS_REQUEST } from "../actions/classes"
+import { getMessageApi } from "../actions/message";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -29,7 +30,7 @@ const classesAPI = (store) => (next) => (action) => {
         }
          )
         .then((response) => {
-          console.log(response.data)
+          store.dispatch(getMessageApi(response.data))
         })
         .catch((error) => console.log(error))
       next(action);

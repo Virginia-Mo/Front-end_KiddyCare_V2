@@ -8,8 +8,10 @@ import Cards from '../Cards';
 import AboutUs from '../AboutUs';
 import Class from "../Class"
 import Testimonial from '../Testimonial';
+import Loader from '../BackOffice/Loader';
 // actions
 import { getClasses } from '../../actions/classes';
+
 
 
 function WelcomePage() {
@@ -42,6 +44,9 @@ function WelcomePage() {
       <section className="classes">
         <h3 className="content__subtitle content__subtitle--border">Some of our Classes</h3>
         <h2 className="content__title content__title--center">Classes for Your Kids</h2> 
+        {classes === "" && (
+          <div className="classes__container"><Loader /></div>
+        )}
      { classes && ( 
       <div className="classes__container" >
        {

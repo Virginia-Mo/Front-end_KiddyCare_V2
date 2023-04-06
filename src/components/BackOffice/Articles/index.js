@@ -10,10 +10,14 @@ import NavBarAdmin from '../NavBarAdmin';
 import { deleteArticle, getArticles } from '../../../actions/articles';
 import { saveId } from '../../../actions/formFields';
 import './style.scss'
+import useEraseMessage from '../../../selectors/eraseMessage';
 
 function ArticlesAdmin() {
     const dispatch = useDispatch()
-   const articles = useSelector((state) => state.articles.articles)
+    useEraseMessage()
+    const articles = useSelector((state) => state.articles.articles)
+    const messageApi = useSelector((state) => state.message.messageApi)
+
     useEffect(() => {
         dispatch(getArticles())
     }, [dispatch])
@@ -22,8 +26,6 @@ function ArticlesAdmin() {
         event.preventDefault();
         dispatch(saveId(id))
         dispatch(deleteArticle())
-        // eslint-disable-next-line no-restricted-globals
-        location.reload()
     }
   return (
       <>
@@ -34,13 +36,18 @@ function ArticlesAdmin() {
     <h2 className="backOffice__title">Articles</h2>
   
    <div className="backOffice__div">
-
+  
     <div className="backOffice__mainContainer">
+
 { !articles && (
     <h3>No Articles</h3>
 )}
 { articles && (
-       <div className="backOffice__table">
+       <div className="backOffice__table"> 
+        { messageApi !== "" && (
+            <p> { messageApi }</p>
+        )} 
+    { messageApi === "" && (
        <table className="backOffice__table--table">
        <thead className="backOffice__table--thead">
      <tr>   
@@ -82,9 +89,10 @@ function ArticlesAdmin() {
     
  ))} 
  </tbody>
-</table>
+</table>)}
 </div>
-     )}
+    )}
+    
      </div>
    </div>  
  </div>

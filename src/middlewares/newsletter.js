@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
 import axios from "axios"
+import { getMessageApi } from "../actions/message";
 import { DELETE_NEWSLETTER_REQUEST, GET_NEWSLETTER_REQUEST, POST_NEWSLETTER, saveNewsletterRequest } from "../actions/newsletter";
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -17,7 +18,7 @@ const newsletterAPI = (store) => (next) => (action) => {
         }
          )
         .then((response) => {
-          console.log(response.data)
+          store.dispatch(getMessageApi(response.data))
         })
 
         .catch((error) => console.log(error))

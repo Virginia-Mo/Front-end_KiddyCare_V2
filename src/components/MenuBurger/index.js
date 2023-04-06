@@ -13,11 +13,13 @@ function MenuBurger() {
     const [open, setOpen] = useState(false)
   return (
     <div className={open? "menuburger opened animate__animated animate__fadeInDown" : "menuburger closed"}>
-    <div className="menuburger__loginIcon">
+   <div className="menuburger__div">
+   <div className="menuburger__loginIcon">
     <LoginIcon />
     </div>
     <div className="burgerContainer" onClick={() => {setOpen(!open)}}>
     <BurgerIcon open={open} /></div>
+    </div>
     { open && 
     <nav className="menuburger__nav">
     <NavBar />

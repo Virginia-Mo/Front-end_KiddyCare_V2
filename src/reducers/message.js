@@ -1,7 +1,8 @@
-import { SAVE__MESSAGE } from "../actions/message";
+import { SAVE__MESSAGE, GET_MESSAGE_API, ERASE_MESSAGE_API } from "../actions/message";
 
 const initialState = {
-  message : ""
+  message : "",
+  messageApi : "",
 };
 
 function messageReducer(state = initialState, action = {}) {
@@ -11,6 +12,16 @@ const {type, payload } = action
       return {
           ...state,
           message : payload.data
+      }
+      case GET_MESSAGE_API : 
+      return {
+          ...state,
+          messageApi : payload.data
+      }
+      case ERASE_MESSAGE_API : 
+      return {
+        ...state,
+        messageApi : ""
       }
     default:
       return state;

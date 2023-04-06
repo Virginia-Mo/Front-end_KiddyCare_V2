@@ -10,20 +10,24 @@ import { changeInputValue } from '../../../actions/formFields'
 import { createArticle } from '../../../actions/articles'
 
 import './style.scss'
+import useEraseMessage from '../../../selectors/eraseMessage'
 
 function ArticleForm() {
     const dispatch = useDispatch()
+    const tags = useSelector(state => state.tags.tags);
+    const messageApi = useSelector(state => state.message.messageApi)
+    useEraseMessage()
+
     useEffect(() => {
         dispatch(getTags());
       }, [dispatch]);
-
-    const tags = useSelector((state) => state.tags.tags);
 
     const handleChange = (event) => {
         dispatch(changeInputValue("tag", event.target.value));
       };
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log("he")
         dispatch(createArticle())
       }
 
@@ -34,11 +38,13 @@ function ArticleForm() {
         <NavBarAdmin />  
     <div className="backoffice backOffice--formArticle">
     <h2 className="backOffice__title">Create an article</h2>
-  
+     
    <div className="backoffice__div">
-
     <div className="backOffice__mainContainer">
-
+     { !messageApi && (
+            <p> { messageApi }</p>
+        )} 
+        { messageApi && (
     <form action="" method="POST" encType="multipart/form-data" className="formArticle" onSubmit={handleSubmit}>
        <div className='formArticle--div'>
        <FormField
@@ -72,7 +78,7 @@ function ArticleForm() {
             label="First Description"
             className="bookingform__input--contact" />
             </div> 
-            <div>
+            <div className='formArticle--div'>
         <FormField
             name="title2"
             type="text"
@@ -90,14 +96,12 @@ function ArticleForm() {
             className="bookingform__input--contact" />
         <p>Category</p>
         <select name="tag" id="tag" className="bookingform__input articleform__input--select" onChange={handleChange}>
-
             {   tags &&
                 tags.map((data) => (
                 <option value={data.id} key={data.id}>{data.name}</option>
                     )) 
                         }
         </select>
-
         <FormField
             name="author_img"
             type="text"
@@ -114,11 +118,12 @@ function ArticleForm() {
             label="Your job"
             className="bookingform__input--contact" />
         </div>
-        </form>
+      
    <div className="buttonDiv">
    <button type="submit" className="createButton">Create</button>
-   </div>
-    </div>
+   </div>  
+   </form>
+   )} </div> 
 </div>
 </div>
 </div>

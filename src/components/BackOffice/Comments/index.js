@@ -19,7 +19,6 @@ function CommentsAdmin() {
 
     const comments = useSelector((state) => state.comments.comments)
     const handleClick = (event, id) => {
-        console.log(event, id)
         event.preventDefault();
         dispatch(saveId(id))
         dispatch(deleteComment())

@@ -18,7 +18,7 @@ function NavBar() {
     const lastArticle = articles[0]
 
   return (
-    <ul>
+    <ul className="header__ul--navbar">
       <li className="header__li">
         <NavLink to="/" className="header__li__navlink">
           Home
@@ -45,7 +45,7 @@ function NavBar() {
         </NavLink>
       </li>
       <li className="header__li header__blog">
-        <NavLink to="/" className="header__li__navlink ">
+        <NavLink to="/" className="header__li__navlink header__li__navlink--blog ">
           Blog
           <MdKeyboardArrowDown />
         </NavLink>

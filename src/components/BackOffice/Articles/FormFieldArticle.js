@@ -26,14 +26,12 @@ function FormFieldArticle({
   const inputId = `field__${name}`;
 
   return (
-    <div className="field">
-      <label
-        className="label"
-        htmlFor={inputId}
-      >
+      <><label
+      className="label"
+      htmlFor={inputId}
+    >
       {label}
-      </label>
-      <input
+    </label><input
         id={inputId}
         name={name}
         data-name={dataName}
@@ -42,10 +40,8 @@ function FormFieldArticle({
         className="contactform__input"
         defaultValue={defaultValue}
         onChange={handleChange}
-        required
-      />
+        required /></>
 
-    </div>
   );
 }
 

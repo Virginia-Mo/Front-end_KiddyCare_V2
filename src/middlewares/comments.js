@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import axios from "axios"
 import { DELETE__COMMENT, GET__COMMENTS, POST_COMMENTS, saveComments } from "../actions/comments";
+import { getMessageApi } from "../actions/message";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -20,7 +21,7 @@ const commentsAPI = (store) => (next) => (action) => {
         }
          )
         .then((response) => {
-          console.log(response.data)
+          store.dispatch(getMessageApi(response.data))
         })
         // eslint-disable-next-line no-console
         .catch((error) => console.log(error))
