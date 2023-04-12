@@ -23,7 +23,7 @@ const commentsAPI = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(getMessageApi(response.data))
         })
-        .catch((error) => alert(error))
+        .catch((error) => new Error(error))
       next(action);
       break;
       case GET__COMMENTS:

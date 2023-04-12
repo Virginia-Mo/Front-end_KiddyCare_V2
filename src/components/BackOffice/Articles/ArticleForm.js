@@ -27,7 +27,6 @@ function ArticleForm() {
       };
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("he")
         dispatch(createArticle())
       }
 
