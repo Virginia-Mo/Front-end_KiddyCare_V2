@@ -19,10 +19,10 @@ function NewsLetter() {
     <div className="footer__container-box">
       <h2 className="footer__title">Newsletter</h2>
       <div>
-      { !messageApi && 
+      { messageApi !== "" && 
        <p>{messageApi}</p> 
       }
-      { messageApi && (
+      { messageApi === "" && (
           <form method="POST" className="newsletterform" onSubmit={handleSubmit}>
         <div>
         <FormField

@@ -23,10 +23,10 @@ function ContactForm() {
 
   return (
      <article className="contact__formcontainer contact__formcontainer--lastPage">
-        { !messageApi && (
-            <p> { messageApi }</p>
-        )}
-        { messageApi && (
+         { messageApi !== "" && 
+       <p>{messageApi}</p> 
+      }
+      { messageApi === "" && (
     <form action="" method="POST" className="contact__bookingform" onSubmit={handleSubmit}>
      <FormField
          name="name"

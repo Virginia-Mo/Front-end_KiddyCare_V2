@@ -19,10 +19,10 @@ return (
     <section className="blog__messageform">
     <div className="contact__formcontainer">
         <h3 className="content__title contact__title ">Leave a comment</h3>
-        { !messageApi && (
-            <p> { messageApi }</p>
-        )}
-        { messageApi && (
+        { messageApi !== "" && 
+       <p>{messageApi}</p> 
+      }
+      { messageApi === "" && (
         <form className="contact__form--blog" onSubmit={handleSubmit} >
         <FormField
                 name="name"

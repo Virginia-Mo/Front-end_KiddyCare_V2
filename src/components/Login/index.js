@@ -22,10 +22,10 @@ function LoginPage() {
     <main className="loginContainer">
       <div className="container">
         <h2 className="adminPage__maintitle">Welcome</h2>
-        { !messageApi && 
+        { messageApi !== "" && 
        <p>{messageApi}</p> 
       }
-      { messageApi && (
+      { messageApi === "" && (
         <form action="" method="POST" onSubmit={handleSubmit} className="loginForm">
           <div className="formArticle__div formArticle__div--login">
             <FormField
