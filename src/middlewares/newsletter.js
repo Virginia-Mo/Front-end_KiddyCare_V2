@@ -21,7 +21,7 @@ const newsletterAPI = (store) => (next) => (action) => {
           store.dispatch(getMessageApi(response.data))
         })
 
-        .catch((error) => console.log(error))
+        .catch((error) => new Error(error))
       next(action);
       break;
       case GET_NEWSLETTER_REQUEST:
@@ -31,10 +31,9 @@ const newsletterAPI = (store) => (next) => (action) => {
         })
         .then((response) => {
           store.dispatch(saveNewsletterRequest(response.data));
-          console.log(response.data)
         })
 
-        .catch((error) => console.log(error))
+        .catch((error) => new Error(error))
       next(action);
       break;
       case DELETE_NEWSLETTER_REQUEST: 
@@ -43,9 +42,9 @@ const newsletterAPI = (store) => (next) => (action) => {
         headers : { role: `${userRole}` }
       })
       .then((response) => {
-        console.log(response.data)
+        response.json("Request Deleted")
       })
-      .catch((error) => console.log(error))
+      .catch((error) => new Error(error))
       next(action);
       break;
       default:

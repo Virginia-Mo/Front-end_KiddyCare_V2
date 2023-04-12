@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable camelcase */
 import axios from "axios"
 import { saveArticles, GET_ARTICLES, DELETE_ARTICLE, CREATE_ARTICLE, UPDATE_ARTICLE} from "../actions/articles"
@@ -32,7 +33,7 @@ const articlesAPI = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(saveArticles(response.data));
         })
-        .catch((error) => console.log(error))
+        .catch((error) => new Error(error))
       next(action);
       break;
       case DELETE_ARTICLE: 
@@ -43,7 +44,7 @@ const articlesAPI = (store) => (next) => (action) => {
       .then((response) => {
         store.dispatch(getMessageApi(response.data))
       })
-      .catch((error) => console.log(error))
+      .catch((error) => new Error(error))
     break;
     case CREATE_ARTICLE:
         axios
@@ -71,7 +72,7 @@ const articlesAPI = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(getMessageApi(response.data))
         })
-        .catch((error) => console.log(error))
+        .catch((error) => new Error(error))
       next(action);
       break;
       case UPDATE_ARTICLE:
@@ -100,7 +101,7 @@ const articlesAPI = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(getMessageApi(response.data))
         })
-        .catch((error) => console.log(error))
+        .catch((error) => new Error(error))
       next(action);
       break;
       default:

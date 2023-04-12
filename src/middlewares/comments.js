@@ -23,8 +23,7 @@ const commentsAPI = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(getMessageApi(response.data))
         })
-        // eslint-disable-next-line no-console
-        .catch((error) => console.log(error))
+        .catch((error) => alert(error))
       next(action);
       break;
       case GET__COMMENTS:
@@ -34,8 +33,7 @@ const commentsAPI = (store) => (next) => (action) => {
       .then((response) => {
         store.dispatch(saveComments(response.data))
       })
-      // eslint-disable-next-line no-console
-      .catch((error) => console.log(error))
+      .catch((error) => new Error(error))
     next(action);
     break;
     case DELETE__COMMENT: 
@@ -43,11 +41,10 @@ const commentsAPI = (store) => (next) => (action) => {
     .delete(`${API_URL}/admin/removecomment/${idSelected}`, {
       headers : { role: `${userRole}` }
     })
-    .then((response) => {
-      console.log(response.data)
+    .then(() => {
+     
     })
-    // eslint-disable-next-line no-console
-    .catch((error) => console.log(error))
+    .catch((error) => new Error(error))
     next(action);
     break;
       default:

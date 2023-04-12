@@ -10,10 +10,8 @@ const teachersSAPI = (store) => (next) => (action) => {
         .get(`${API_URL}/teachers`)
         .then((response) => {
           store.dispatch(saveTeachers(response.data));
-          console.log(response.data)
         })
-        // eslint-disable-next-line no-console
-        .catch((error) => console.log(error))
+        .catch((error) => new Error(error))
       next(action);
       break;
       default:

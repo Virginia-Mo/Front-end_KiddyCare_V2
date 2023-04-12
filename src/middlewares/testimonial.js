@@ -10,10 +10,9 @@ const testimonialAPI = (store) => (next) => (action) => {
         .get(`${API_URL}/testimonials`)
         .then((response) => {
           store.dispatch(saveTestimonial(response.data));
-          console.log(response.data)
         })
         // eslint-disable-next-line no-console
-        .catch((error) => console.log(error))
+        .catch((error) => new Error(error))
       next(action);
       break;
       default:

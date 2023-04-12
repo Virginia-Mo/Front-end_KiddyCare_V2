@@ -13,7 +13,7 @@ const tagsAPI = (store) => (next) => (action) => {
           store.dispatch(saveTags(response.data));
         })
         // eslint-disable-next-line no-console
-        .catch((error) => console.log(error))
+        .catch((error) => new Error(error))
       next(action);
       break;
       default:

@@ -15,13 +15,11 @@ const classesAPI = (store) => (next) => (action) => {
         .get(`${API_URL}/classes`)
         .then((response) => {
           store.dispatch(saveClasses(response.data));
-          console.log(response.data)
         })
-        .catch((error) => console.log(error))
+        .catch((error) => new Error(error))
       next(action);
       break;
       case POST_BOOKING:
-          console.log(`API`);
         axios
         .post(`${API_URL}/bookingclass`,
         { name,
@@ -32,7 +30,7 @@ const classesAPI = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(getMessageApi(response.data))
         })
-        .catch((error) => console.log(error))
+        .catch((error) => new Error(error))
       next(action);
       break
       case GET_CLASS_REQUEST:
@@ -42,9 +40,8 @@ const classesAPI = (store) => (next) => (action) => {
         })
         .then((response) => {
           store.dispatch(saveClassRequest(response.data));
-          console.log(response.data)
         })
-        .catch((error) => console.log(error))
+        .catch((error) => new Error(error))
       next(action);
       break;
       case DELETE_CLASS_REQUEST: 
@@ -53,9 +50,9 @@ const classesAPI = (store) => (next) => (action) => {
         headers : { role: `${userRole}` }
       })
       .then((response) => {
-        console.log(response.data)
+        response.json("Deleted")
       })
-      .catch((error) => console.log(error))
+      .catch((error) => new Error(error))
       next(action);
       break;
      default:

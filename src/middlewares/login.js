@@ -16,8 +16,7 @@ const loginAPI = (store) => (next) => (action) => {
           localStorage.clear();
           window.location.href='/'
         })
-        // eslint-disable-next-line no-console
-        .catch((error) => console.log(error))
+        .catch((error) => new Error(error))
       break;
       case LOGIN:
         axios
@@ -32,7 +31,6 @@ const loginAPI = (store) => (next) => (action) => {
           localStorage.setItem('userId', response.data.id);
           window.location.href = '/'
         })
-        // eslint-disable-next-line no-console
         .catch((error) => {
       store.dispatch(getMessageApi(error.response.data))})
       next(action);
