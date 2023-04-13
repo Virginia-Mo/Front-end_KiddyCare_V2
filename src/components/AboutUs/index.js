@@ -25,7 +25,7 @@ function AboutUs() {
             lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut
             sed diam sea ipsum est dolor</p>
        
-        <span><a href="/about" className="aboutus__linkinfos">Learn More</a></span>
+        <span><a href="/aboutus" className="aboutus__linkinfos">Learn More</a></span>
     </article>
 </section>
   )
