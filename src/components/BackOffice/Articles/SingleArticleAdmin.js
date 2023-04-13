@@ -53,10 +53,10 @@ function SingleArticleAdmin() {
    <div className="backOffice__div--form">
 
     <div className="backOffice__mainContainer">
-    { !messageApi && (
+    { messageApi !== "" && (
             <p> { messageApi }</p>
         )} 
-        { messageApi && (
+        { messageApi === "" && (
     <form action="" method="POST" encType="multipart/form-data" className="formArticle" onSubmit={handleSubmit}>
       <div className='formArticle--div'>
       <FormFieldArticle

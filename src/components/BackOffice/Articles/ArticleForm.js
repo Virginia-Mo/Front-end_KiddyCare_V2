@@ -40,10 +40,10 @@ function ArticleForm() {
      
    <div className="backoffice__div">
     <div className="backOffice__mainContainer">
-     { !messageApi && (
+     { messageApi !== "" && (
             <p> { messageApi }</p>
         )} 
-        { messageApi && (
+        { messageApi === "" && (
     <form action="" method="POST" encType="multipart/form-data" className="formArticle" onSubmit={handleSubmit}>
        <div className='formArticle--div'>
        <FormField
