@@ -12,4 +12,4 @@ The project is fully responsive, some elements as the menu change with the size 
 - Animation : Animation On Scroll (AOS), Animate.css
 - Icon : React Icon
   
-You can visit the website here : [https://kiddycare.netlify.app/](Click)
+You can visit the website here : [https://kiddycare.netlify.app/](https://kiddycare.netlify.app/)
