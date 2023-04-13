@@ -8,9 +8,10 @@ import Cards from '../Cards';
 import AboutUs from '../AboutUs';
 import Class from "../Class"
 import Testimonial from '../Testimonial';
-import Loader from '../BackOffice/Loader';
+
 // actions
 import { getClasses } from '../../actions/classes';
+import Loader from '../Loader';
 
 
 

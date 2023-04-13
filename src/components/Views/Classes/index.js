@@ -12,7 +12,8 @@ import { getClasses, postBooking } from '../../../actions/classes';
 import { changeInputValue } from '../../../actions/formFields';
 import './style.scss'
 import useEraseMessage from '../../../selectors/eraseMessage';
-import Loader from '../../BackOffice/Loader';
+import Loader from '../../Loader';
+
 
 
 function ClassesPage() {
@@ -43,7 +44,7 @@ function ClassesPage() {
         <h2 className="content__title content__title--center">Classes for Your Kids</h2> 
         { !classes && (
           <div className="classes__container">
-          <Loader />
+         <Loader /> 
           </div>
         )}
      { classes && ( 

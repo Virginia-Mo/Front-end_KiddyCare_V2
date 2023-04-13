@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 // components
 import SecondHeader from '../../SecondHeader';
 import Testimonial from "../../Testimonial"
+import Loader from '../../Loader';
 // actions
 import { getTeachers } from '../../../actions/teachers';
 import './style.scss'
 import 'animate.css'
-import Loader from '../../BackOffice/Loader';
+
 
 function AboutPage() {
   const dispatch = useDispatch();

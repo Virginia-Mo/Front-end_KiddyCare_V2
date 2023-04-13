@@ -5,12 +5,12 @@ import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 // components
 import SecondHeader from '../../SecondHeader';
+import Loader from '../../Loader';
 // actions
 import { getGallery, saveNewGallery } from '../../../actions/gallery';
 
 import 'animate.css'
 import './style.scss'
-import Loader from '../../BackOffice/Loader';
 
 function GalleryPage() {
     let id  = ""
